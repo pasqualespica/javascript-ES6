@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector("#name_form").onsubmit = function(event) {
+
+                // Proprieta' asincrone della nostra pagina
+                // prevenire il reload della pagina
+                // event.preventDefault(); 
+                
+                const name = document.querySelector("#name_input").value
+                alert(`Il tuo nome e' ${name}`)
+
+                // Pulisco il campo
+                document.querySelector("#name_input").value = ""
+
+                // in alternaiva al preventDefault si puo' ritornare false
+                return false;
+
+            };
+        })
+    </script>
+    
+    <title>Example5</title>
+</head>
+<body>
+    <form id="name_form">
+        <input id="name_input" type="text" placeholder="Inserisci il tuo nome">
+        <input type="submit">
+    </form>
+</body>
+</html>
