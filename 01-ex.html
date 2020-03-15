@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelector("#name_form").onsubmit = function(event) {
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelector("#name_form").onsubmit = e => {
 
                 // Proprieta' asincrone della nostra pagina
                 // prevenire il reload della pagina
-                // event.preventDefault(); 
+                e.preventDefault(); 
                 
                 const name = document.querySelector("#name_input").value
                 alert(`Il tuo nome e' ${name}`)
@@ -17,7 +17,7 @@
                 document.querySelector("#name_input").value = ""
 
                 // in alternaiva al preventDefault si puo' ritornare false
-                return false;
+                // return false;
 
             };
         })
