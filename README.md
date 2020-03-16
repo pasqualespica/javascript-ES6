@@ -10,3 +10,8 @@ https://www.w3schools.com/js/js_htmldom.asp
 
 https://www.w3schools.com/js/js_htmldom_events.asp
 
+
+## Foreign exchange rates API
+fffffffrAQZSW
+
+https://exchangeratesapi.io/

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+
+        function getCuurentyRate(currency) {
+            console.log(currency);
+
+            let url = "https://api.exchangeratesapi.io/latest?base=" + currency;
+
+            // const config = {
+            //     method : "POST", // "POST", "PUT"
+            //     body : JSON.stringify(data)
+            // }
+            // fetch(url, config)
+
+            fetch(url)
+                .then(function(response) {
+                    console.log("Status", response.status)
+                    response.json()
+                        .then(function(data) {
+                            console.log("Fetch result ", data)
+                            console.log("USD " + data["rates"]["USD"])
+
+                        })
+                })
+        }
+
+        getCuurentyRate("EUR")
+    </script>
+    <title>Fetch esempio 1</title>
+</head>
+<body>
+    
+</body>
+</html>
