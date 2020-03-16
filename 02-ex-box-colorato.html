@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+
+<head>
+    <style media="screen">
+        #box {
+            width: 200px;
+            height: 200px;
+            border: 3px solid black;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // Cambia il colore di sfondo del box a "red"
+            // class color-change
+                document.querySelectorAll('.color-change').forEach(bottone => {
+                    bottone.onclick = () => {
+                        document.querySelector("#box").style.background = bottone.dataset.colore;
+                    }
+                })
+                
+            });
+
+            // // Cambia il colore di sfondo del box a "orange"
+            // document.querySelector('#orange').onclick = function () {
+            //     document.querySelector('#box').style.background = 'orange';
+            // };
+
+            // // Cambia il colore di sfondo del box a "green"
+            // document.querySelector('#green').onclick = function () {
+            //     document.querySelector('#box').style.background = 'green';
+            // };
+    </script>
+    <title>Box Colorato</title>
+</head>
+
+<body>
+    <div id="box">
+    </div>
+    <br>
+    <!-- date attibute - data-color -->
+    <button class="color-change" data-colore="red">Rosso</button>
+    <button class="color-change" data-colore="orange">Arancione</button>
+    <button class="color-change" data-colore="green">Verde</button>
+</body>
+
+</html>

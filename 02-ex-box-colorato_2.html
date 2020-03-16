@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+
+    <style media="screen">
+        #box {
+            width: 200px;
+            height: 200px;
+            border: 3px solid black;
+        }
+    </style>
+
+    <script>
+        // Attenzione con l'arrow function non funziona !!!
+        document.addEventListener('DOMContentLoaded', function () {
+
+            document.querySelector('#color-change').onchange = function () {
+                document.querySelector('#box').style.background = this.value;
+            };
+
+        });
+    </script>
+    <title>THIS</title>
+</head>
+
+<body>
+    <div id="box">
+    </div>
+    <br>
+    <select id="color-change">
+        <option selected disabled>Seleziona un Colore</option>
+        <option value="red">Rosso</option>
+        <option value="orange">Arancione</option>
+        <option value="green">Verde</option>
+        <option value="blue">Blu</option>
+        <option value="purple">Viola</option>
+        <option value="grey">Grigio</option>
+        <option value="black">Nero</option>
+    </select>
+    <hr>
+    <!-- altro esempio di THIS  -->
+    <button onclick="this.style.display='none'">Clicca per Rimuovermi</button>
+</body>
+
+</html>
