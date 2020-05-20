@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", () => {
+
             document.querySelector("#name_form").onsubmit = e => {
 
                 // Proprieta' asincrone della nostra pagina
@@ -20,6 +21,7 @@
                 // return false;
 
             };
+
         })
     </script>
     
@@ -28,7 +30,10 @@
 <body>
     <form id="name_form">
         <input id="name_input" type="text" placeholder="Inserisci il tuo nome">
-        <input type="submit">
+        <label for="bottone">PREMI
+                    <input id="bottone" type="submit" value="DAJEEE">
+        </label>
+                        
     </form>
 </body>
 </html>

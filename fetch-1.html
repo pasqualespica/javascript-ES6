@@ -15,14 +15,15 @@
             // }
             // fetch(url, config)
 
-            fetch(url)
+            fetch(url) // fetch restituirsce una promise di una chiamata sincrona
                 .then(function(response) {
                     console.log("Status", response.status)
                     response.json()
                         .then(function(data) {
                             console.log("Fetch result ", data)
                             console.log("USD " + data["rates"]["USD"])
-
+                            
+                            return "DAJEEEE"
                         })
                 })
         }

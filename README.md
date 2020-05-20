@@ -14,3 +14,12 @@ https://www.w3schools.com/js/js_htmldom_events.asp
 ## Foreign exchange rates API
 
 https://exchangeratesapi.io/
+
+
+### TODOapp And MVC exmaple tnx to `@taniarascia`
+https://www.taniarascia.com/javascript-mvc-todo-app/
+
+*Note* remember to `Allow sites to save and read cookie data` on your browser
+
+
+![](img/allow-cookies.png)

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script type="text/javascript">
+        let conta = 0;
+        let array_numeri = [ 5,7, 11, 13]
+
+        function cambiaMessaggio() {
+            document.querySelector('h1').innerHTML = "Arrivederici";
+
+
+        }
+
+        function incrementa() {
+            conta++;
+            document.querySelector("#contatore").innerHTML = conta
+            if (array_numeri.includes(conta)) {
+                alert(`numero ${conta} e' nell'array`)
+            }
+        }
+
+
+        function hello_world() {
+            let name = prompt("Comem ti chiami")
+            alert(`Ciao bello ${name}`)
+        }
+        // hello_world()
+    </script>
+
+</head>
+
+<body>
+    <h1>Ciao benvenuti !!!!</h1>
+    <button onclick="cambiaMessaggio()">PREMI</button>
+    <button onclick="incrementa()">INCREMENTA</button>
+
+    <h1 id="contatore">0</h1>
+
+</body>
+
+</html>

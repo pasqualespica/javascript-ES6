@@ -17,6 +17,9 @@
                 document.querySelectorAll('.color-change').forEach(bottone => {
                     bottone.onclick = () => {
                         document.querySelector("#box").style.background = bottone.dataset.colore;
+
+                        document.querySelector("#box").textContent = bottone.dataset.numero;
+
                     }
                 })
                 
@@ -40,9 +43,9 @@
     </div>
     <br>
     <!-- date attibute - data-color -->
-    <button class="color-change" data-colore="red">Rosso</button>
-    <button class="color-change" data-colore="orange">Arancione</button>
-    <button class="color-change" data-colore="green">Verde</button>
+    <button class="color-change" data-colore="red" data-numero="1">Rosso</button>
+    <button class="color-change" data-colore="orange" data-numero="2">Arancione</button>
+    <button class="color-change" data-colore="green" data-numero="3" >Verde</button>
 </body>
 
 </html>
