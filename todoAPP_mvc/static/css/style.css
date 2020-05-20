@@ -39,6 +39,10 @@ button {
   margin: 0 .5rem;
 }
 
+/* .delete {
+  background: red;
+} */
+
 [type="text"] {
   width: 100%;
 }

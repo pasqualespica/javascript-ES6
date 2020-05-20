@@ -53,6 +53,7 @@ class Model {
         this._commit(this.todos)
     }
 
+    // set to complete a ACTION
     toggleTodo(id) {
         this.todos = this.todos.map(todo =>
             todo.id === id ? { id: todo.id, text: todo.text, complete: !todo.complete } : todo
@@ -76,24 +77,33 @@ class Model {
  */
 class View {
     constructor() {
+        // The root element
         this.app = this.getElement('#root')
         
+        // The form, with a [type="text"] input, and a submit button
         this.form = this.createElement('form')
         
+        // text
         this.input = this.createElement('input')
         this.input.type = 'text'
         this.input.placeholder = 'Add todo'
         this.input.name = 'todo'
 
+        // button
         this.submitButton = this.createElement('button')
         this.submitButton.textContent = 'Submit'
 
+        // ADD text and button to FORM
         this.form.append(this.input, this.submitButton)
 
+        // The title of the app
         this.title = this.createElement('h1')
         this.title.textContent = 'Todos'
 
+        // The visual representation of the todo list
         this.todoList = this.createElement('ul', 'todo-list')
+
+        // append FORM to APP
         this.app.append(this.title, this.form, this.todoList)
 
         this._temporaryTodoText = ''
@@ -108,19 +118,37 @@ class View {
         this.input.value = ''
     }
 
+    // ----------------------------------------------------------
+    // Create an element with an optional CSS class
     createElement(tag, className) {
         const element = document.createElement(tag)
 
-        if (className) element.classList.add(className)
+        if (className) {
+            console.log(`Rx ${className}`)
+            const classNames = className.split(" ");
+            console.log(`Size ${classNames.length} ${classNames}`)
+
+            // let classe;
+            // for (classe in classNames) {
+            //     console.log(`\t ${classNames[classe]}`)
+            // }
+
+            element.classList.add(...classNames);
+
+        }
+ 
+        // if (className) element.classList.add(className)
 
         return element
     }
 
+    // Retrieve an element from the DOM
     getElement(selector) {
         const element = document.querySelector(selector)
 
         return element
     }
+    // ----------------------------------------------------------
 
     displayTodos(todos) {
         // Delete all nodes
@@ -155,7 +183,8 @@ class View {
                     span.textContent = todo.text
                 }
 
-                const deleteButton = this.createElement('button', 'delete')
+                const deleteButton = this.createElement('button', 'delete btn btn-danger')
+                // const deleteButton = this.createElement('button', 'delete')
                 deleteButton.textContent = 'Delete'
                 li.append(checkbox, span, deleteButton)
 
@@ -189,7 +218,9 @@ class View {
 
     bindDeleteTodo(handler) {
         this.todoList.addEventListener('click', event => {
-            if (event.target.className === 'delete') {
+            console.log(`binDeleteTodo .... ${event.target.className}`)
+            // if (event.target.className === 'delete') {
+            if (event.target.className.includes('delete') ) {
                 const id = parseInt(event.target.parentElement.id)
 
                 handler(id)
@@ -238,6 +269,7 @@ class Controller {
 
         // Explicit this binding
         this.model.bindTodoListChanged(this.onTodoListChanged)
+
         this.view.bindAddTodo(this.handleAddTodo)
         this.view.bindEditTodo(this.handleEditTodo)
         this.view.bindDeleteTodo(this.handleDeleteTodo)
@@ -250,6 +282,7 @@ class Controller {
     onTodoListChanged = todos => {
         this.view.displayTodos(todos)
     }
+
 
     handleAddTodo = todoText => {
         this.model.addTodo(todoText)
