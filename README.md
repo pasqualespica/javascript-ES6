@@ -23,3 +23,8 @@ https://www.taniarascia.com/javascript-mvc-todo-app/
 
 
 ![](img/allow-cookies.png)
+
+
+
+### Python vs JavaScript for Pythonistas
+https://realpython.com/python-vs-javascript/
